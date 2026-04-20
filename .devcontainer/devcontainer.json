@@ -1,16 +1,8 @@
 {
   "name": "Emacs + Claude Code",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
 
-  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y emacs && npm install -g @anthropic-ai/claude-code && mkdir -p ~/.emacs.d && cp .emacs.d/init.el ~/.emacs.d/init.el",
-
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.live-server"
-      ]
-    }
-  },
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && mkdir -p ~/.emacs.d && cp .emacs.d/init.el ~/.emacs.d/init.el",
 
   "waitFor": "postCreateCommand"
 }
